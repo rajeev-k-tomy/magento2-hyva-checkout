@@ -195,21 +195,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../how_to_use/" class="md-nav__link">
-        How to use
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -241,6 +226,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#development-mode" class="md-nav__link">
+    Development Mode
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#where-is-the-react-app" class="md-nav__link">
@@ -294,8 +286,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../at_a_glance/" class="md-nav__link">
-        Checkout - at a glance
+      <a href="../i18n/" class="md-nav__link">
+        Internationalization
       </a>
     </li>
   
@@ -309,8 +301,116 @@
   
   
     <li class="md-nav__item">
-      <a href="../i18n/" class="md-nav__link">
-        Internationalisation
+      <a href="../payment-integration/" class="md-nav__link">
+        Payment Integration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../env_variables/" class="md-nav__link">
+        React app configurations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        New Version - 2.0
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="New Version - 2.0" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          New Version - 2.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.0/new_version/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.0/installation/" class="md-nav__link">
+        How to use it
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.0/multi-theme/" class="md-nav__link">
+        Multiple themes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.0/major-changes/" class="md-nav__link">
+        Major changes
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faqs/" class="md-nav__link">
+        FAQs
       </a>
     </li>
   
@@ -339,6 +439,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#development-mode" class="md-nav__link">
+    Development Mode
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#where-is-the-react-app" class="md-nav__link">
@@ -375,8 +482,11 @@
                 
                 
                 <h1 id="how-to-customize-hyva-checkout">How To Customize Hyva Checkout</h1>
-<p>Hyva checkout is a Magento 2 module which holds a react app inside it. So when you want
-to customize the checkout, you need to work with the react app embedded inside the module.</p>
+<p>Hyva checkout is a Magento 2 module which holds a react app inside it. So when you want to customize the checkout, you need to work with the react app embedded inside the module.</p>
+<p>Also, when it comes to customization, the installation approach you have taken into account becomes important. Checkout the <a href="/installation/"><strong>installation instructions</strong></a> for further details.</p>
+<h2 id="development-mode">Development Mode</h2>
+<p>The ReactApp embedded inside Hyvä Checkout allow us to launch it as a stand alone App. This is the best way of customizing Hyvä Checkout for your site. When you launch the ReactApp, it will be served from the address <code>http://localhost:3000</code>. It will prompt you to provide a valid cartId and once you provided the cartId, you can now work with the checkout in the most efficient way as this development mode supports Hot Module Reloading (HMR).</p>
+<p>To setting up the development environment, follow the further steps.</p>
 <h2 id="where-is-the-react-app">Where is the react app</h2>
 <p>You can find the react app at <code>src/reactapp</code>.</p>
 <h2 id="setting-up-react-app">Setting up react app</h2>
@@ -393,15 +503,22 @@ to customize the checkout, you need to work with the react app embedded inside t
 </li>
 <li>
 <p>Configure your Magento 2 backend site.</p>
-<p>There is two ways you can do this:</p>
+<p>There are basically two ways you can achieve this:</p>
 <p><strong>3.a</strong> - The cleanest approach is here. create <code>.env</code> file in <code>src/reactapp</code> directory and specify your site as shown below</p>
 <pre><code>REACT_APP_BASE_URL=http://your-m2-site.com
 </code></pre>
+<div class="admonition warning">
+<p class="admonition-title">CORS complaint from the browser</p>
+<p>One disadvantage you may face here is the complaint of CORS issue from browser.</p>
+</div>
 <p><strong>3.b</strong> - A hacky trick would be specify your site as your <code>proxy</code> in the <code>package.json</code>. There is
       already an entry there. Replace it with yours</p>
 <pre><code>"proxy": "http://your-m2-site.com",
 </code></pre>
-<p>Use only one option above. Don't do both</p>
+<p>Use only one option above. Don't do both.</p>
+</li>
+<li>
+<p>There are some more configurations you can do using environment variables. You can find an example in <code>env.example</code> file. If you need any of the configurations specified there, then create <code>.env</code> file at the root path of the react app and add your custom configurations there. You can find more details of these environment variables <a href="../env_variables/"><strong>here</strong></a>.</p>
 </li>
 </ol>
 <h2 id="start-app">Start App</h2>
@@ -411,7 +528,7 @@ to customize the checkout, you need to work with the react app embedded inside t
 <p>The app is now available at <code>http://localhost:3000</code></p>
 <p>As soon as the react app kick start, it will show a prompt box to input the cart id. Well,
 without the a valid cart, the checkout page is useless.</p>
-<p><img alt="Cart Id Prompt Box" src="/assets/img/cart_id_prompt_box.png" title="Prompt box showing to input the cart id" /></p>
+<p><img alt="Cart Id Prompt Box" src="../assets/img/cart_id_prompt_box.png" title="Prompt box showing to input the cart id" /></p>
 <p>So provide a valid cart id and then you are good to go.</p>
                 
               
@@ -430,7 +547,7 @@ without the a valid cart, the checkout page is useless.</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../how_to_use/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../installation/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -439,7 +556,7 @@ without the a valid cart, the checkout page is useless.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              How to use
+              Installation
             </div>
           </div>
         </a>

@@ -14,7 +14,7 @@
     
     
       
-        <title>Hyva Checkout At A Glance - Hyvä Themes - Hyvä Checkout</title>
+        <title>React app configurations - Hyvä Themes - Hyvä Checkout</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hyva-checkout-at-a-glance" class="md-skip">
+        <a href="#environment-variables" class="md-skip">
           Skip to content
         </a>
       
@@ -87,7 +87,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hyva Checkout At A Glance
+              React app configurations
             
           </span>
         </div>
@@ -255,11 +255,56 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../env_variables/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          React app configurations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         React app configurations
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#env-configurations-available" class="md-nav__link">
+    Env Configurations Available
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-of-configurations-considered" class="md-nav__link">
+    Order of configurations considered
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -382,57 +427,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#email-section" class="md-nav__link">
-    Email Section
+  <a href="#env-configurations-available" class="md-nav__link">
+    Env Configurations Available
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#billing-address-section" class="md-nav__link">
-    Billing Address Section
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shipping-address-section" class="md-nav__link">
-    Shipping Address Section
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shipping-methods-section" class="md-nav__link">
-    Shipping Methods Section
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#payment-methods-section" class="md-nav__link">
-    Payment Methods Section
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cart-items-section" class="md-nav__link">
-    Cart Items Section
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#totals-section" class="md-nav__link">
-    Totals Section
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#place-order" class="md-nav__link">
-    Place Order
+  <a href="#order-of-configurations-considered" class="md-nav__link">
+    Order of configurations considered
   </a>
   
 </li>
@@ -450,55 +453,33 @@
               
                 
                 
-                <h1 id="hyva-checkout-at-a-glance">Hyva Checkout At A Glance</h1>
-<p>Hyva checkout is essentially a one page checkout solution.  So the whole checkout looks like
-below:</p>
-<p><img alt="Hyva Checkout Page" src="../assets/img/guest-checkout-page.png" title="Hyva checkout page" /></p>
-<p>It contains following sections</p>
-<h2 id="email-section">Email Section</h2>
-<p>Email section has mainly two purpose. It allows us to continue in a guest checkout mode or we can
-continue checkout after logged-in</p>
-<p>In the guest checkout mode, which is the default mode, there is an email address field. Upon providing
-the email address and save, it will attach the email address to the cart.</p>
-<p><img alt="Email Guest" src="../assets/img/email-guest.png" title="Email Guest" /></p>
-<p>In the logged-in checkout mode, the user will be provided with username and password fields. Upon submit, if the login is successful, the cart is now merged with the customer cart (if any) and then
-proceed as logged-in checkout. Customer addresses will be listed out in the address sections to pick up
-in this case. If the login unsuccessful, then it will be treated as guest checkout. the email address
-provided will be attached to the cart and then proceed as the first case.</p>
-<p><img alt="Email Logged-in" src="../assets/img/email-login.png" title="Email Logged-in" /></p>
-<p>You can read in depth about email section in the "Checkout - Email Section" page.</p>
-<h2 id="billing-address-section">Billing Address Section</h2>
-<p>Billing address section allows to set a billing address to the cart.</p>
-<p>By default billing address would be treated same as the shipping address.</p>
-<p><img alt="Billing Address Section - Same As Shipping" src="../assets/img/billing-address-same-as-shipping.png" /></p>
-<p>However you can alter this by unchecking the checkbox. This will show the billing address fields and you can fill out the details there.</p>
-<p><img alt="Billing Adderss Fields" src="../assets/img/billing-address-fields.png" /></p>
-<p>In the case of logged-in checkout, if the customer has billing address options, then it will be listed
-out as address cards. You can pick any one of the address or create a fresh address.</p>
-<p>You can read in depth about the billing address section in the "Checkout - Billing Address" page.</p>
-<h2 id="shipping-address-section">Shipping Address Section</h2>
-<p>Shipping address section allows to set a shipping address to the cart</p>
-<p>Shipping address section will show the shipping address fields by default. You can provide the shipping address and upon submit, it will save the shipping address and set the same shipping address as the billing address if the billing address set same as the shipping address.</p>
-<p><img alt="Shipping Adderss Fields" src="../assets/img/shipping-address-fields.png" /></p>
-<p>In the case of logged-in checkout, if the customer has shipping address options, then it will be listed
-out as address cards. You can pick any one of the address or create a fresh address.</p>
-<p><img alt="Shipping Adderss Cards" src="../assets/img/shipping-address-with-cards.png" /></p>
-<p>You can read in depth about the billing address section in the "Checkout - Shipping Address" page.</p>
-<h2 id="shipping-methods-section">Shipping Methods Section</h2>
-<p>Based on the cart info, it will be showing the availabe shipping methods as radio option. You can pick up any of the shipping method. upon update, it will set the opted shipping method to the cart</p>
-<p><img alt="Shipping Methods" src="../assets/img/shipping-methods.png" /></p>
-<h2 id="payment-methods-section">Payment Methods Section</h2>
-<p>Baded on the cart info, it will be showing the available payment methods as radio option. You can choose the correct option there. Upon update, it willset the opted payment method to the cart.</p>
-<p><img alt="Payment Methods" src="../assets/img/payment-methods.png" /></p>
-<h2 id="cart-items-section">Cart Items Section</h2>
-<p>Cart items section will show the product involving in the cart.</p>
-<p>You can update the quantity of cart items from the checkout page itsef. You can also remove a cart item from the checkout page itself.</p>
-<p><img alt="Cart Items" src="../assets/img/cart-items.png" /></p>
-<h2 id="totals-section">Totals Section</h2>
-<p>Each of the above section will alter the cart data as the user fill out the form. According to the user actions, the totals would change and those changes will be shown in real time in the total section.</p>
-<p><img alt="Totals Section" src="../assets/img/totals.png" /></p>
-<h2 id="place-order">Place Order</h2>
-<p>Place order button converts the cart to an order and then show the order success page.</p>
+                <h1 id="environment-variables">Environment Variables</h1>
+<p>The react app comes along with the hyvä checkout provides some environment variables to configure the app. This becomes handy if you want to see your app in a particular currency or in a language for example.</p>
+<p>All the env configurations can be see in your code in the file <code>env.example</code>. The variable names are straight forward. Every env variable stars with <code>REACT_APP_</code> which is a create-react-app trivia (<em>Oh... did I mention the react app inside the hyvä checkout is basically a <a href="https://github.com/facebook/create-react-app">create-react-app</a>?</em> 🤔 ).</p>
+<h2 id="env-configurations-available">Env Configurations Available</h2>
+<ol>
+<li>
+<p><code>REACT_APP_BASE_URL</code>: Defines the base URL for the Magento backend from which the react app needs to fetch the data. There is also a setting  called <code>proxy</code> available in <code>package.json</code> file which also serves the same purpose where it won't throw any CORS errors in the browser. Comes in handy in that situation.</p>
+</li>
+<li>
+<p><code>REACT_APP_STORE_CODE</code>: Specifies the store code from which data needs to be collected. This data is passed in the header in all graphql queries so that store specific data will be obtained in the checkout.</p>
+</li>
+<li>
+<p><code>REACT_APP_LANGUAGE</code>: Specifies the locale of the react app. Based on these values translation will be applied in the react app. eg: <code>en_US</code> for English store; <code>de_DE</code> for German store etc.</p>
+</li>
+<li>
+<p><code>REACT_APP_CURRENCY_CODE</code>: The currency code should be used in the react app. This will be used in the <code>Intl.NumberFormat</code> to correctly format the price according to the language. eg: <code>EUR</code> for Euro, <code>INR</code> for Indian Rupee, etc.</p>
+</li>
+<li>
+<p><code>REACT_APP_CURRENCY_SYMBOL</code>: The currency symbol should be used in the react app. This will be used in the <code>Intl.NumberFormat</code> to correctly format the price according to the language. eg: <code>$</code> for Dollar, <code>€</code> for Euro, etc.</p>
+</li>
+<li>
+<p><code>REACT_APP_DEFAULT_COUNTRY</code>: Default country the react app needs to be used. This will be used in the country field in the address sections. If none specified, then default to <code>US</code>.</p>
+</li>
+</ol>
+<p>You should place your <code>.env</code> file at the root of the react application.</p>
+<h2 id="order-of-configurations-considered">Order of configurations considered</h2>
+<p>The highest priority is always for the environment variable configurations. The next preference will be to go for the data attribute <code>data-checkout_Config</code> where you can specify all these settings if you want. When the production build finally works in the site, this is how we are passing store specific configurations into the react app. If you need this during development, then you need to specify this in the <code>public/index.html</code> file. At last, it will use the default values in the app. Most of them you can find in the src/config.js file.</p>
                 
               
               
@@ -513,6 +494,39 @@ out as address cards. You can pick any one of the address or create a fresh addr
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../payment-integration/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Payment Integration
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../2.0/new_version/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Getting started
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
